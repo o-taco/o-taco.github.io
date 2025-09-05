@@ -2,22 +2,151 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>my tuff portfolio</title>
+  <title>Keon Wong — Portfolio</title>
   <style>
-    body { font-family: "Comic-Sans-MS", sans-serif; margin: 50px; }
-    h1 { color: #333; }
-    a { text-decoration: none; color: blue; }
+    body {
+      font-family: "Times New Roman", serif;
+      background: #fff;
+      color: #000;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      border-bottom: 2px solid black;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+
+    header p {
+      font-style: italic;
+    }
+
+    nav {
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 200px;
+      background: #f9f9f9;
+      border-right: 2px solid black;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    nav h2 {
+      font-size: 1.2em;
+      border-bottom: 1px solid black;
+      margin-bottom: 10px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin: 10px 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: black;
+    }
+
+    main {
+      margin-left: 240px;
+      padding: 40px;
+      max-width: 800px;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    section h2 {
+      border-bottom: 1px solid black;
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      border-top: 2px solid black;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9em;
+      margin-top: 50px;
+    }
+
+    code {
+      background: #eee;
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+
+    .equation {
+      font-family: "Cambria Math", serif;
+      text-align: center;
+      margin: 20px 0;
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
-  <h1>hi im otaco (sigma male)</h1>
-  <p>ts my portfolio :3</p>
-  <h2>projects</h2>
-  <ul>
-    <li><a href="https://github.com/o-taco/puzzlebot">project 1 (goofy discord puzzle bot that we never used)</a></li>
-    <li><a href="https://github.com/o-taco/project2">i dont have any other projects on ts account :skull:</a></li>
-  </ul>
-  <h2>contact</h2>
-  <p>email: sigma@gmail.com</p>
+  <nav>
+    <h2>Contents</h2>
+    <ul>
+      <li><a href="#about">Preface</a></li>
+      <li><a href="#projects">Chapter 1 — Projects</a></li>
+      <li><a href="#hobbies">Chapter 2 — Hobbies</a></li>
+      <li><a href="#contact">Appendix — Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Keon Wong</h1>
+    <p>A portfolio in the style of a physics textbook</p>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>Preface</h2>
+      <p>Hello, I’m Keon. I enjoy <b>physics, robotics, cello, and programming</b>. 
+      This site is written like a textbook, but it’s really just my portfolio.</p>
+      <div class="equation">E = mc<sup>2</sup></div>
+    </section>
+
+    <section id="projects">
+      <h2>Chapter 1 — Projects</h2>
+      <ul>
+        <li><b>Robotics Competitions</b> — Built autonomous robots and competed regionally.</li>
+        <li><b>Physics Simulations</b> — Simulated gravitational fields and orbital mechanics.</li>
+        <li><b>Programming Challenges</b> — Solved competitive programming problems in C++.</li>
+      </ul>
+    </section>
+
+    <section id="hobbies">
+      <h2>Chapter 2 — Hobbies</h2>
+      <p><b>Cello:</b> I love playing classical and modern pieces on the cello.</p>
+      <p><b>Physics:</b> I enjoy thinking about black holes, relativity, and cosmology.</p>
+      <p><b>Programming:</b> Always exploring new algorithms and optimizations.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Appendix — Contact</h2>
+      <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+      <p>GitHub: <a href="https://github.com/username">github.com/username</a></p>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Keon Wong — Written like a textbook, lived like an experiment.
+  </footer>
 </body>
 </html>
