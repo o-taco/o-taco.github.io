@@ -18,11 +18,11 @@
   position:fixed;
   inset:0;
   pointer-events:none;
-  opacity:0.16;
+  opacity:0.08;
   background-image:
     linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px);
-  background-size: 64px 64px;
+  background-size: 72px 72px;
   mask-image: radial-gradient(circle at 50% 20%, rgba(0,0,0,1), rgba(0,0,0,0));
 }
 
@@ -36,38 +36,73 @@
 /* ---------- layout ---------- */
 .hero{
   text-align:center;
-  padding: 88px 20px 60px;
+  padding: 96px 20px 72px;
 }
 
 .hero h1{
   margin:0;
-  font-size:2.8em;
-  letter-spacing:0.08em;
+  font-size:3em;
+  letter-spacing:0.12em;
 }
 
 .hero p{
-  margin-top:10px;
+  margin-top:14px;
   color:var(--muted);
   font-style:italic;
+  letter-spacing:0.08em;
+}
+
+.hero::after{
+  content:"";
+  display:block;
+  width:120px;
+  height:1px;
+  margin:36px auto 0;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,0.25),
+    transparent
+  );
 }
 
 main{
-  max-width: 980px;
+  max-width: 860px;
   margin: 0 auto;
-  padding: 0 24px 100px;
-  display:grid;
-  gap: 42px;
+  padding: 0 24px 120px;
+  display: grid;
+  gap: 48px;
+  position: relative;
+  z-index: 2;
 }
+
+main::before{
+  content:"";
+  position:absolute;
+  inset:-120px -80px;
+  background:
+    radial-gradient(circle at 50% 20%,
+      rgba(106,168,255,0.12),
+      rgba(0,0,0,0) 60%);
+  z-index:-1;
+  pointer-events:none;
+}
+
 
 /* ---------- glass sections ---------- */
 .glass{
-  background: var(--glass);
-  backdrop-filter: blur(18px);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 28px 32px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-  transition: 0.3s ease;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.08),
+    rgba(255,255,255,0.03)
+  );
+  backdrop-filter: blur(22px);
+  border-radius: 28px;
+  padding: 32px 36px;
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.55),
+    inset 0 1px 0 rgba(255,255,255,0.08);
 }
 
 .glass:hover{
@@ -110,23 +145,26 @@ footer{
 
 .card{
   grid-column: span 6;
-  display:flex;
-  flex-direction:column;
-  gap: 12px;
-
-  padding: 18px 18px 16px;
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.04);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
-  transition: 0.25s ease;
+  padding: 20px 22px;
+  border-radius: 22px;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.08),
+      rgba(255,255,255,0.03)
+    );
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.45),
+    inset 0 1px 0 rgba(255,255,255,0.08);
 }
 
+
 .card:hover{
-  transform: translateY(-4px);
-  border-color: rgba(106,168,255,0.7);
-  box-shadow: 0 0 34px rgba(106,168,255,0.18), 0 22px 55px rgba(0,0,0,0.6);
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 36px rgba(106,168,255,0.28),
+    0 28px 70px rgba(0,0,0,0.6);
 }
 
 .card h3{
@@ -172,6 +210,18 @@ footer{
 .arrow{
   font-size: 1.1em;
   opacity: 0.9;
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at center,
+      rgba(0,0,0,0) 55%,
+      rgba(0,0,0,0.45) 100%);
+  z-index:1;
 }
 
 /* responsive */
