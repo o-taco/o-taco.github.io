@@ -1,68 +1,54 @@
-// ---------- subtle parallax background ----------
-document.addEventListener("mousemove", e => {
-  document.body.style.backgroundPosition = `${e.clientX / 50}px ${e.clientY / 50}px`;
-});
+// ---------- Parallax background ----------
+const bg = document.getElementById("bgImage");
+if (bg) {
+  const strength = 18;
+  window.addEventListener("mousemove", (e) => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 2;
+    const y = (e.clientY / window.innerHeight - 0.5) * 2;
+    bg.style.transform = `translate(${x * strength}px, ${y * strength}px)`;
+  });
+}
 
-// ---------- starfield (performance-safe) ----------
-const canvas = document.getElementById("stars");
-const ctx = canvas.getContext("2d", { alpha: true });
+// ---------- Starfield ----------
+const canvas = document.getElementById("starCanvas");
+const ctx = canvas.getContext("2d");
 
-let w, h, dpr;
-let stars = [];
-const STAR_COUNT = 140;      // keep modest for performance
-const SPEED = 0.18;          // slow drift
-const TWINKLE = 0.018;
+let w, h;
+const stars = [];
 
 function resize() {
-  dpr = Math.min(window.devicePixelRatio || 1, 2);
-  w = canvas.width = Math.floor(window.innerWidth * dpr);
-  h = canvas.height = Math.floor(window.innerHeight * dpr);
-  canvas.style.width = window.innerWidth + "px";
-  canvas.style.height = window.innerHeight + "px";
-  initStars();
+  w = canvas.width = window.innerWidth;
+  h = canvas.height = window.innerHeight;
 }
-
-function initStars() {
-  stars = [];
-  for (let i = 0; i < STAR_COUNT; i++) {
-    stars.push({
-      x: Math.random() * w,
-      y: Math.random() * h,
-      r: (Math.random() * 1.2 + 0.2) * dpr,
-      a: Math.random() * 0.55 + 0.15,
-      vy: (Math.random() * 0.6 + 0.2) * dpr
-    });
-  }
-}
-
-function step() {
-  ctx.clearRect(0, 0, w, h);
-
-  // soft vignette glow (very faint)
-  const g = ctx.createRadialGradient(w*0.5, h*0.15, 0, w*0.5, h*0.15, Math.max(w,h)*0.7);
-  g.addColorStop(0, "rgba(106,168,255,0.08)");
-  g.addColorStop(1, "rgba(0,0,0,0)");
-  ctx.fillStyle = g;
-  ctx.fillRect(0,0,w,h);
-
-  // stars
-  for (const s of stars) {
-    s.y += s.vy * SPEED;
-    if (s.y > h + 10) s.y = -10;
-
-    // twinkle
-    s.a += (Math.random() - 0.5) * TWINKLE;
-    s.a = Math.max(0.08, Math.min(0.65, s.a));
-
-    ctx.beginPath();
-    ctx.fillStyle = `rgba(233,237,245,${s.a})`;
-    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-    ctx.fill();
-  }
-
-  requestAnimationFrame(step);
-}
-
-window.addEventListener("resize", resize);
 resize();
-step();
+window.addEventListener("resize", resize);
+
+const STAR_COUNT = Math.floor((w * h) / 9000);
+
+for (let i = 0; i < STAR_COUNT; i++) {
+  stars.push({
+    x: Math.random() * w,
+    y: Math.random() * h,
+    r: Math.random() * 1.4 + 0.3,
+    vy: Math.random() * 0.3 + 0.05,
+    a: Math.random() * 0.6 + 0.2
+  });
+}
+
+function draw() {
+  ctx.clearRect(0, 0, w, h);
+  for (const s of stars) {
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(210,230,255,${s.a})`;
+    ctx.fill();
+    s.y -= s.vy;
+    if (s.y < -5) {
+      s.y = h + 5;
+      s.x = Math.random() * w;
+    }
+  }
+  requestAnimationFrame(draw);
+}
+
+draw();
