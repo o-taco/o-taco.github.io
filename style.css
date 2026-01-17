@@ -12,14 +12,57 @@
 
 *{ box-sizing:border-box; }
 
-body{
-  margin:0;
-  min-height:100vh;
-  font-family:"Old Standard TT","Century Schoolbook",serif;
-  color:var(--text);
-  background: radial-gradient(circle at top, var(--bg2), var(--bg));
-  overflow-x:hidden;
+    
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&display=swap');
+
+body {
+  font-family: "Old Standard TT", "Century Schoolbook", serif;
+  background: #fffdf9;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
 }
+
+header {
+  text-align: center;
+  padding: 40px 20px;
+  border-bottom: 2px solid #ccc;
+}
+
+header h1 {
+  font-size: 2.5em;
+  margin: 0;
+  color: #1a3d7c;
+}
+
+main {
+  max-width: 800px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+section {
+  margin-bottom: 60px;
+}
+
+section h2 {
+  font-size: 1.8em;
+  color: #1a3d7c;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #ccc;
+  font-size: 0.9em;
+  color: #555;
+  background: #f8f8f8;
+}
+
 
 /* ---------- background layers ---------- */
 .bg-grid{
