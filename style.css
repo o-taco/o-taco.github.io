@@ -1,0 +1,29 @@
+:root {
+  --bg: #050814;
+  --glass: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.12);
+  --accent: #6aa8ff;
+  --text: #e8ecf3;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #0b1025, var(--bg));
+  color: var(--text);
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.6);
+}
+
+.glass:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 30px rgba(106,168,255,.25);
+  transition: 0.3s ease;
+}
