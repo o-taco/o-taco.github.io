@@ -202,10 +202,68 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ---------- Responsive ---------- */
+/* ---------- Project groups ---------- */
 
+.project-group {
+  margin-bottom: 28px;
+}
+
+.project-group-title {
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(198, 208, 255, 0.7);
+  margin-bottom: 14px;
+}
+
+/* ---------- Project cards ---------- */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.project-card {
+  background: rgba(19, 30, 70, 0.94);
+  border-radius: 18px;
+  padding: 16px 18px;
+  text-decoration: none;
+  color: #e9edff;
+  transition: 0.25s ease;
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 22px rgba(90, 130, 255, 0.35),
+    0 22px 48px rgba(0, 0, 0, 0.65);
+}
+
+.project-card.disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.project-name {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.project-desc {
+  font-size: 13px;
+  line-height: 1.4;
+  color: rgba(210, 220, 255, 0.75);
+}
+
+/* Responsive */
 @media (max-width: 640px) {
-  .shortcut-grid {
+  .project-grid {
     grid-template-columns: 1fr;
   }
 }
+
