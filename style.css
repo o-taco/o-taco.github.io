@@ -212,18 +212,6 @@ footer{
   opacity: 0.9;
 }
 
-body::after{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  background:
-    radial-gradient(circle at center,
-      rgba(0,0,0,0) 55%,
-      rgba(0,0,0,0.45) 100%);
-  z-index:1;
-}
-
 /* responsive */
 @media (max-width: 760px){
   .card{ grid-column: span 12; }
