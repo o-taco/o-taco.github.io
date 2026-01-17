@@ -1,51 +1,82 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>o-taco · portfolio</title>
+
+  <!-- Fonts (same vibe as new tab) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=JetBrains+Mono:wght@300;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <div class="bg-grid"></div>
-  <canvas id="stars"></canvas>
+  <!-- Background system -->
+  <div class="background-layer">
+    <div class="bg-image" id="bgImage"></div>
+    <canvas id="starCanvas"></canvas>
+  </div>
+  <div class="overlay-gradient"></div>
 
-  
-  <header class="hero">
-    <h1>o-taco</h1>
-    <p style="font-style:italic; color:#555;">github portfolio</p>
-  </header>
+  <!-- Content -->
+  <main class="content">
+    <section class="center-stack">
 
-  <main>
-    <section id="about" class="glass">
-      <h2>interests</h2>
-        <ul>
-          <li>physics → ap1/apc/fma/usapho</li>
-          <li>cs/programming → ai/ml</li>
-          <li>robotics → vex/fll/adc</li>
-          <li>cello → cellobration/pys</li>
+      <!-- Hero -->
+      <div class="hero">
+        <div class="greeting">Hi, I’m</div>
+        <h1>o-taco</h1>
+        <p class="subtitle">physics · computer science · robotics</p>
+      </div>
+
+      <!-- Interests -->
+      <div class="widget-card">
+        <div class="widget-title">Interests</div>
+        <ul class="list">
+          <li>physics → ap / f=ma / usapho</li>
+          <li>cs → ai / ml / systems</li>
+          <li>robotics → vex / fll / adc</li>
+          <li>cello → performance / pys</li>
         </ul>
-    </section>
+      </div>
 
-    <section id="projects" class="glass">
-      <h2>projects</h2>
-      <h3>scratch</h3>
-      <a href="https://scratch.mit.edu/users/sergeantboxers/">
-        sergeantboxers - my scratch account
-      </a>
-      <p>created in april 2020 & filled with early projects that got me hooked on programming</p>
-    </section>
+      <!-- Projects -->
+      <div class="widget-card">
+        <div class="widget-title">Projects</div>
 
-    <section id="contact" class="glass">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:placeholder@example.com">placeholder@example.com</a></p>
-      <p>GitHub: <a href="https://github.com/o-taco">github.com/o-taco</a></p>
+        <div class="shortcut-grid">
+          <a class="shortcut-pill" href="https://scratch.mit.edu/users/sergeantboxers/" target="_blank">
+            <span class="shortcut-icon shortcut-icon-desmos">∫</span>
+            <span>Scratch (early)</span>
+          </a>
+
+          <a class="shortcut-pill" href="https://github.com/o-taco" target="_blank">
+            <span class="shortcut-icon shortcut-icon-docs">CS</span>
+            <span>GitHub Repos</span>
+          </a>
+
+          <a class="shortcut-pill disabled">
+            <span class="shortcut-icon">⏳</span>
+            <span>Physics Sims</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="widget-card">
+        <div class="widget-title">Contact</div>
+        <p class="mono">
+          email: <a href="mailto:placeholder@example.com">placeholder@example.com</a><br>
+          github: <a href="https://github.com/o-taco">github.com/o-taco</a>
+        </p>
+      </div>
+
     </section>
   </main>
 
-  <footer>
-    © 2025 o-taco
-  </footer>
+  <script src="main.js"></script>
 </body>
 </html>
