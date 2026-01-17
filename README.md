@@ -10,19 +10,18 @@
 ---
 
 ### interests
-- physics → ap / f=ma / usapho
+- physics - astro / mech
 - cs → ai / ml / systems
-- robotics → vex / fll / adc
-- cello → performance / pys
+- robotics → vex worlds / fll states / adc worlds
+- cello → az musicfest / cellobration / pys
 
 ---
 
 ### portfolio
-🔗 **Interactive site →** https://yourname.github.io
+**site:** https://o-taco.github.io
 
 ---
 
 ### featured work
-- 🧠 battlecode ai
-- 🛰 esp32 control systems
-- 📐 physics simulations
+- early scratch projects in machine learning
+- python game automation projects using machine learning
