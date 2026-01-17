@@ -11,9 +11,9 @@
 
 ### interests
 - physics - astro / mech
-- cs → ai / ml / systems
-- robotics → vex worlds / fll states / adc worlds
-- cello → az musicfest / cellobration / pys
+- cs - ai / ml / systems
+- robotics - vex worlds / fll states / adc worlds
+- cello - az musicfest / cellobration / pys
 
 ---
 
