@@ -134,13 +134,20 @@ body {
   text-shadow: 0 0 24px rgba(140,180,255,0.45);
 }
 
-.hero-hint {
-  margin-top: 18px;
-  font-size: 12px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(200,210,255,0.5);
+.hero-caret {
+  margin-top: 24px;
+  font-size: 28px;
+  color: rgba(200, 210, 255, 0.55);
+  animation: caretFloat 2.2s ease-in-out infinite;
+  user-select: none;
 }
+
+@keyframes caretFloat {
+  0%   { transform: translateY(0); opacity: 0.4; }
+  50%  { transform: translateY(10px); opacity: 0.8; }
+  100% { transform: translateY(0); opacity: 0.4; }
+}
+
 
 /* ---------- cards ---------- */
 
