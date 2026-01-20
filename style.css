@@ -111,7 +111,12 @@ body {
 .hero-inner {
   text-align: center;
   pointer-events: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 
 .hero-hi {
   font-size: 16px;
