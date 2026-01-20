@@ -129,6 +129,10 @@ body {
   cursor: default;
 }
 
+.hero-name:hover {
+  text-shadow: 0 0 24px rgba(140,180,255,0.45);
+}
+
 .hero-hint {
   margin-top: 18px;
   font-size: 12px;
