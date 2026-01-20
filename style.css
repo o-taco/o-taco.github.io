@@ -142,9 +142,9 @@ body {
 .hero-caret {
   margin-top: 28px;
 
-  font-size: 40px;                 /* bigger */
-  font-weight: 600;                /* thicker */
-  color: #eef2ff;                  /* near-white */
+  font-size: 40px;
+  font-weight: 600;
+  color: #eef2ff;
 
   text-shadow:
     0 0 12px rgba(160,190,255,0.8),
@@ -153,6 +153,7 @@ body {
   animation: caretFloat 2.2s ease-in-out infinite;
   user-select: none;
   cursor: pointer;
+  line-height: 1;
 }
 
 @keyframes caretFloat {
