@@ -1,3 +1,15 @@
+// ---------- hero caret scroll ----------
+const heroCaret = document.getElementById("heroCaret");
+
+if (heroCaret) {
+  heroCaret.addEventListener("click", () => {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: "smooth"
+    });
+  });
+}
+
 // ---------- scroll-linked hero ----------
 const heroName = document.getElementById("heroName");
 
