@@ -1,3 +1,14 @@
+// ---------- system status timestamp ----------
+const statusTime = document.getElementById("statusTime");
+if (statusTime) {
+  const now = new Date();
+  statusTime.textContent = now.toLocaleDateString(undefined, {
+    year: "numeric",
+    month: "short"
+  });
+}
+
+
 // ---------- interest nodes ----------
 document.querySelectorAll(".interest-header").forEach(header => {
   header.addEventListener("click", () => {
