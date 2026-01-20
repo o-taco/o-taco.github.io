@@ -1,3 +1,7 @@
+:root {
+  --hero-center-offset: -70%;
+}
+
 *,
 *::before,
 *::after {
@@ -111,7 +115,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -67%);
+  transform: translate(-50%, var(--hero-center-offset));
 }
 
 .hero-name {
@@ -130,9 +134,9 @@ body {
 
 .hero-hi {
   position: absolute;
-  top: calc(50% - 110px);
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, calc(var(--hero-center-offset) - 120px));
 
   font-size: 14px;
   letter-spacing: 0.25em;
