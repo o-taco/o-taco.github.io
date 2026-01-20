@@ -1,3 +1,22 @@
+// ---------- scroll-linked hero ----------
+const heroName = document.getElementById("heroName");
+
+window.addEventListener("scroll", () => {
+  if (!heroName) return;
+
+  const scrollY = window.scrollY;
+  const maxScroll = window.innerHeight * 0.6;
+  const t = Math.min(scrollY / maxScroll, 1);
+
+  const scale = 1 - t * 0.45;           // shrink
+  const translateY = t * -120;          // move up
+  const opacity = 1 - t * 0.25;          // subtle fade
+
+  heroName.style.transform =
+    `translateY(${translateY}px) scale(${scale})`;
+  heroName.style.opacity = opacity;
+});
+
 // ---------- system status timestamp ----------
 const statusTime = document.getElementById("statusTime");
 if (statusTime) {
