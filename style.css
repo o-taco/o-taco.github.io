@@ -107,6 +107,27 @@ body {
   overflow: hidden;
 }
 
+.hero-name-anchor {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-name {
+  font-size: clamp(72px, 14vw, 180px);
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+  color: #eef2ff;
+
+  text-shadow:
+    0 0 20px rgba(150,180,255,0.8),
+    0 0 50px rgba(100,140,255,0.5);
+
+  will-change: transform, opacity;
+}
+
+
 .hero-hi {
   position: absolute;
   top: calc(50% - 110px);
@@ -117,22 +138,6 @@ body {
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: rgba(220,230,255,0.6);
-}
-
-.hero-name {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  font-size: clamp(72px, 14vw, 180px);
-  letter-spacing: 0.12em;
-  white-space: nowrap;
-  color: #eef2ff;
-
-  text-shadow:
-    0 0 20px rgba(150,180,255,0.8),
-    0 0 50px rgba(100,140,255,0.5);
 }
 
 .hero-name:hover {
