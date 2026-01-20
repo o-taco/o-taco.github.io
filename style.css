@@ -1,5 +1,5 @@
 :root {
-  --hero-center-offset: -70%;
+  --hero-center-offset: -76%;
 }
 
 *,
@@ -136,7 +136,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, calc(var(--hero-center-offset) - 167px));
+  transform: translate(-50%, calc(var(--hero-center-offset) - 175px));
 
   font-size: 14px;
   letter-spacing: 0.25em;
