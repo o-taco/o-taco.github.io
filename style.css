@@ -127,6 +127,7 @@ body {
   letter-spacing: 0.12em;
   transition: transform 0.15s linear, opacity 0.15s linear;
   cursor: default;
+  white-space: nowrap;
 }
 
 .hero-name:hover {
