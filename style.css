@@ -320,6 +320,40 @@ a:hover {
   margin-bottom: 6px;
 }
 
+/* ---------- system status ---------- */
+
+.status-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.status-item {
+  background: rgba(19, 30, 70, 0.9);
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+
+.status-label {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(180, 190, 255, 0.7);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.status-value {
+  font-size: 14px;
+  color: #e9edff;
+}
+
+@media (max-width: 640px) {
+  .status-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* responsive */
 @media (max-width: 640px) {
   .project-grid {
