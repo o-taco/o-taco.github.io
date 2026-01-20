@@ -1,4 +1,20 @@
-// ---------- Parallax background ----------
+// ---------- interest nodes ----------
+document.querySelectorAll(".interest-header").forEach(header => {
+  header.addEventListener("click", () => {
+    const node = header.parentElement;
+    const content = node.querySelector(".interest-content");
+
+    node.classList.toggle("open");
+
+    if (node.classList.contains("open")) {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } else {
+      content.style.maxHeight = "0px";
+    }
+  });
+});
+
+// ---------- parallax bg ----------
 const bg = document.getElementById("bgImage");
 if (bg) {
   const strength = 18;
@@ -9,7 +25,7 @@ if (bg) {
   });
 }
 
-// ---------- Starfield ----------
+// ---------- starfield ----------
 const canvas = document.getElementById("starCanvas");
 const ctx = canvas.getContext("2d");
 
