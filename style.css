@@ -101,22 +101,11 @@ body {
 /* ---------- mega hero ---------- */
 
 .mega-hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
 }
-
-.hero-inner {
-  text-align: center;
-  pointer-events: auto;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 
 .hero-hi {
   font-size: 16px;
@@ -127,12 +116,19 @@ body {
 }
 
 .hero-name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   font-size: clamp(72px, 14vw, 180px);
-  font-weight: 500;
   letter-spacing: 0.12em;
-  transition: transform 0.15s linear, opacity 0.15s linear;
-  cursor: default;
   white-space: nowrap;
+  color: #eef2ff;
+
+  text-shadow:
+    0 0 20px rgba(150,180,255,0.8),
+    0 0 50px rgba(100,140,255,0.5);
 }
 
 .hero-name:hover {
