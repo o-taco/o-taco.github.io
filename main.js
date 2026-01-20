@@ -10,6 +10,12 @@ if (heroCaret) {
   });
 }
 
+window.addEventListener("scroll", () => {
+  if (!heroCaret) return;
+  heroCaret.style.opacity = window.scrollY > 30 ? "0" : "1";
+});
+
+
 // ---------- scroll-linked hero ----------
 const heroName = document.getElementById("heroName");
 
