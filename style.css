@@ -139,6 +139,22 @@ body {
   text-shadow: 0 0 24px rgba(140,180,255,0.45);
 }
 
+.hero-name-wrap {
+  transform: translateY(-24px);
+}
+
+@media (max-width: 640px) {
+  .hero-name-wrap {
+    transform: translateY(-16px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero-name-wrap {
+    transform: translateY(-32px);
+  }
+}
+
 .hero-caret {
   margin-top: 28px;
 
