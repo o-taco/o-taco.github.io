@@ -50,7 +50,7 @@ body {
   z-index: 1;
 }
 
-/* ---------- Layout ---------- */
+/* ---------- layout ---------- */
 
 .content {
   position: relative;
@@ -70,7 +70,7 @@ body {
   align-items: center;
 }
 
-/* ---------- Hero ---------- */
+/* ---------- hero ---------- */
 
 .hero {
   text-align: center;
@@ -98,7 +98,7 @@ body {
   color: rgba(190,200,255,0.7);
 }
 
-/* ---------- Cards ---------- */
+/* ---------- cards ---------- */
 
 .widget-card {
   width: 100%;
@@ -120,7 +120,7 @@ body {
   margin-bottom: 14px;
 }
 
-/* ---------- Lists ---------- */
+/* ---------- lists ---------- */
 
 .list {
   list-style: none;
@@ -132,7 +132,7 @@ body {
   font-size: 15px;
 }
 
-/* ---------- Projects Grid ---------- */
+/* ---------- projects grid ---------- */
 
 .shortcut-grid {
   display: grid;
@@ -185,7 +185,7 @@ body {
   color: #f5f8ff;
 }
 
-/* ---------- Text ---------- */
+/* ---------- text ---------- */
 
 .mono {
   font-family: "JetBrains Mono", monospace;
@@ -202,7 +202,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ---------- Project groups ---------- */
+/* ---------- project groups ---------- */
 
 .project-group {
   margin-bottom: 28px;
@@ -216,7 +216,7 @@ a:hover {
   margin-bottom: 14px;
 }
 
-/* ---------- Project cards ---------- */
+/* ---------- project cards ---------- */
 
 .project-grid {
   display: grid;
@@ -260,7 +260,67 @@ a:hover {
   color: rgba(210, 220, 255, 0.75);
 }
 
-/* Responsive */
+/* ---------- interest nodes ---------- */
+
+.interest-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.interest-node {
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.interest-header {
+  width: 100%;
+  background: rgba(19, 30, 70, 0.9);
+  border: none;
+  color: #e9edff;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: inherit;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 14px;
+}
+
+.interest-header:hover {
+  background: rgba(30, 45, 95, 0.9);
+}
+
+.chevron {
+  transition: transform 0.25s ease;
+  opacity: 0.7;
+}
+
+.interest-node.open .chevron {
+  transform: rotate(90deg);
+}
+
+.interest-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: rgba(12, 18, 40, 0.9);
+}
+
+.interest-content ul {
+  padding: 12px 20px 14px;
+  margin: 0;
+  list-style: none;
+}
+
+.interest-content li {
+  font-size: 14px;
+  color: rgba(210, 220, 255, 0.85);
+  margin-bottom: 6px;
+}
+
+/* responsive */
 @media (max-width: 640px) {
   .project-grid {
     grid-template-columns: 1fr;
