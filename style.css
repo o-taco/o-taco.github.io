@@ -478,6 +478,37 @@ a:hover {
           drop-shadow(0 0 18px rgba(160,190,255,0.8));
 }
 
+.trophy-info {
+  margin: 30px auto 0;
+  max-width: 520px;
+  text-align: center;
+
+  padding: 18px 24px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.1);
+
+  color: rgba(230,240,255,0.85);
+  transition: opacity 0.2s ease;
+}
+
+.info-title {
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.info-desc {
+  margin-top: 6px;
+  color: rgba(200,210,230,0.8);
+}
+
+.info-year {
+  margin-top: 4px;
+  font-size: 0.85em;
+  opacity: 0.6;
+}
+
+
 /* responsive */
 @media (max-width: 640px) {
   .project-grid {
