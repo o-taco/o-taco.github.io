@@ -1,17 +1,19 @@
 // trophies
 
-const trophies = document.querySelectorAll(".trophy");
-const info = document.getElementById("trophyInfo");
+document.addEventListener("DOMContentLoaded", () => {
+  const trophies = document.querySelectorAll(".trophy");
+  const info = document.getElementById("trophyInfo");
 
-const title = info.querySelector(".info-title");
-const desc = info.querySelector(".info-desc");
-const year = info.querySelector(".info-year");
+  const title = info.querySelector(".info-title");
+  const desc = info.querySelector(".info-desc");
+  const year = info.querySelector(".info-year");
 
-trophies.forEach(trophy => {
-  trophy.addEventListener("mouseenter", () => {
-    title.textContent = trophy.dataset.title;
-    desc.textContent = trophy.dataset.desc;
-    year.textContent = trophy.dataset.year;
+  trophies.forEach(trophy => {
+    trophy.addEventListener("mouseenter", () => {
+      title.textContent = trophy.dataset.title;
+      desc.textContent = trophy.dataset.desc;
+      year.textContent = trophy.dataset.year;
+    });
   });
 });
 
