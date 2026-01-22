@@ -127,6 +127,20 @@ csFocus.addEventListener("click", (e) => {
   }
 });
 
+overlayClose.addEventListener("click", () => {
+  overlay.classList.add("hidden");
+  overlayImg.src = "";
+});
+
+overlay.addEventListener("click", (e) => {
+  // click outside glass closes
+  if (e.target === overlay) {
+    overlay.classList.add("hidden");
+    overlayImg.src = "";
+  }
+});
+
+
 // ---------- parallax bg ----------
 const bg = document.getElementById("bgImage");
 if (bg) {
