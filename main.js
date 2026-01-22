@@ -112,38 +112,53 @@ const b64img =
 //   `);
 // });
 
-const overlay = document.getElementById("easterEggOverlay");
-const overlayImg = document.getElementById("easterEggImage");
-const overlayClose = document.getElementById("easterEggClose");
+document.addEventListener("DOMContentLoaded", () => {
+  const csFocus = document.getElementById("csFocus");
+  const overlay = document.getElementById("easterEggOverlay");
+  const overlayImg = document.getElementById("easterEggImage");
+  const overlayClose = document.getElementById("easterEggClose");
 
-csFocus.addEventListener("click", (e) => {
-  console.log("CS clicked", e.shiftKey);
-});
+  console.log("overlay elements:", {
+    csFocus,
+    overlay,
+    overlayImg,
+    overlayClose
+  });
 
-csFocus.addEventListener("click", (e) => {
-  if (e.shiftKey) {
-    e.preventDefault();
-    e.stopPropagation();
-
-    overlayImg.src = b64img;
-    overlay.classList.remove("hidden");
-    console.log(overlay, overlayImg);
+  if (!csFocus || !overlay || !overlayImg || !overlayClose) {
+    console.error("Easter egg elements missing — check IDs or HTML placement");
     return;
   }
-});
 
-overlayClose.addEventListener("click", () => {
-  overlay.classList.add("hidden");
-  overlayImg.src = "";
-});
+  csFocus.addEventListener(
+    "click",
+    (e) => {
+      console.log("CS clicked", e.shiftKey);
 
-overlay.addEventListener("click", (e) => {
-  // click outside glass closes
-  if (e.target === overlay) {
+      if (!e.shiftKey) return;
+
+      e.preventDefault();
+      e.stopImmediatePropagation();
+
+      overlayImg.src = b64img;
+      overlay.classList.remove("hidden");
+    },
+    true
+  );
+
+  overlayClose.addEventListener("click", () => {
     overlay.classList.add("hidden");
     overlayImg.src = "";
-  }
+  });
+
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) {
+      overlay.classList.add("hidden");
+      overlayImg.src = "";
+    }
+  });
 });
+
 
 
 // ---------- parallax bg ----------
