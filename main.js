@@ -117,6 +117,10 @@ const overlayImg = document.getElementById("easterEggImage");
 const overlayClose = document.getElementById("easterEggClose");
 
 csFocus.addEventListener("click", (e) => {
+  console.log("CS clicked", e.shiftKey);
+});
+
+csFocus.addEventListener("click", (e) => {
   if (e.shiftKey) {
     e.preventDefault();
     e.stopPropagation();
