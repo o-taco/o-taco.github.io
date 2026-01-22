@@ -92,9 +92,10 @@ csFocus.addEventListener("click", (e) => {
   if (e.shiftKey) {
     e.preventDefault();
     e.stopPropagation();
-
-    eggImg.src = b64img;
     overlay.classList.remove("hidden");
+    
+    const win = window.open();
+    win.document.write(`<img src="${b64img}" />`);
     return;
   }
 
