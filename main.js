@@ -127,6 +127,7 @@ csFocus.addEventListener("click", (e) => {
 
     overlayImg.src = b64img;
     overlay.classList.remove("hidden");
+    console.log(overlay, overlayImg);
     return;
   }
 });
