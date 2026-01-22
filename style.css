@@ -466,11 +466,28 @@ a:hover {
 }
 
 .trophy {
-  font-size: 48px;
-  cursor: pointer;
-  transition: transform 0.25s ease, filter 0.25s ease;
-  filter: grayscale(0.2) brightness(0.9);
+  position: relative;
 }
+
+.level-badge {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  padding: 4px 6px;
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: rgba(230,240,255,0.9);
+
+  pointer-events: none;
+  backdrop-filter: blur(6px);
+}
+
 
 .trophy:hover {
   transform: translateY(-12px) scale(1.1);
@@ -506,6 +523,18 @@ a:hover {
   margin-top: 4px;
   font-size: 0.85em;
   opacity: 0.6;
+}
+
+.level-state {
+  box-shadow: 0 0 10px rgba(120,170,255,0.35);
+}
+
+.level-national {
+  box-shadow: 0 0 12px rgba(255,200,120,0.45);
+}
+
+.level-world {
+  box-shadow: 0 0 16px rgba(255,120,160,0.6);
 }
 
 
