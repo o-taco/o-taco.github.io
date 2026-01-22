@@ -636,6 +636,8 @@ a:hover {
   background: rgba(10, 12, 20, 0.55);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+
+  transform: translateZ(0);
 }
 
 .easter-egg-overlay.hidden {
