@@ -445,38 +445,115 @@ a:hover {
   }
 }
 
-/* trophies */
+/* ---------------------------------------- trophies ---------------------------------------- */
 
 .awards-section {
   margin-top: 120px;
 }
 
-.trophy-shelf {
-  display: flex;
-  justify-content: center;
-  gap: 36px;
-  padding: 40px 30px;
-  margin-top: 30px;
+/* ---- shelf wrapper ---- */
 
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 20px;
-  backdrop-filter: blur(14px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+.award-shelf {
+  margin-top: 56px;
 }
+
+/* shelf label */
+.shelf-title {
+  margin-bottom: 12px;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(190,200,255,0.75);
+}
+
+/* ---- trophy rail ---- */
+
+.award-shelf > .trophy {
+  display: inline-flex;
+}
+
+.award-shelf {
+  position: relative;
+  padding-bottom: 18px;
+}
+
+/* horizontal rail container */
+.award-shelf {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 28px;
+  padding: 20px 24px;
+
+  overflow-x: auto;
+  scrollbar-width: none;
+
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 18px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.5);
+}
+
+.award-shelf::-webkit-scrollbar {
+  display: none;
+}
+
+/* shelf line */
+.award-shelf::after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 10px;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,0.25),
+    transparent
+  );
+  pointer-events: none;
+}
+
+/* ---- trophy ---- */
 
 .trophy {
   position: relative;
+  font-size: 46px;
+  cursor: pointer;
+
+  padding: 8px 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease;
+  
+  filter: grayscale(0.25) brightness(0.9);
 }
+
+.trophy:hover {
+  transform: translateY(-14px) scale(1.12);
+  filter:
+    grayscale(0)
+    brightness(1.25)
+    drop-shadow(0 0 18px rgba(160,190,255,0.8));
+}
+
+/* ---- level badge ---- */
 
 .level-badge {
   position: absolute;
-  bottom: -10px;
+  bottom: -6px;
   left: 50%;
   transform: translateX(-50%);
 
   font-size: 9px;
   letter-spacing: 0.14em;
+  text-transform: uppercase;
+
   padding: 4px 6px;
   border-radius: 999px;
 
@@ -484,58 +561,17 @@ a:hover {
   border: 1px solid rgba(255,255,255,0.18);
   color: rgba(230,240,255,0.9);
 
-  pointer-events: none;
   backdrop-filter: blur(6px);
+  pointer-events: none;
 }
 
+/* ---- level glow accents ---- */
 
-.trophy:hover {
-  transform: translateY(-12px) scale(1.1);
-  filter: grayscale(0) brightness(1.2)
-          drop-shadow(0 0 18px rgba(160,190,255,0.8));
-}
-
-.trophy-info {
-  margin: 30px auto 0;
-  max-width: 520px;
-  text-align: center;
-
-  padding: 18px 24px;
-  border-radius: 14px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.1);
-
-  color: rgba(230,240,255,0.85);
-  transition: opacity 0.2s ease;
-}
-
-.info-title {
-  font-size: 1.1em;
-  font-weight: 500;
-}
-
-.info-desc {
-  margin-top: 6px;
-  color: rgba(200,210,230,0.8);
-}
-
-.info-year {
-  margin-top: 4px;
-  font-size: 0.85em;
-  opacity: 0.6;
-}
-
-.level-state {
+.trophy[data-level="state"] .level-badge {
   box-shadow: 0 0 10px rgba(120,170,255,0.35);
 }
 
-.level-national {
-  box-shadow: 0 0 12px rgba(255,200,120,0.45);
-}
-
-.level-world {
-  box-shadow: 0 0 16px rgba(255,120,160,0.6);
-}
+.trophy[data-leve]()
 
 
 /* responsive */
