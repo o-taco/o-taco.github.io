@@ -92,6 +92,7 @@ csFocus.addEventListener("click", (e) => {
     win.document.write(<img src="${b64img}" />); 
   } 
 });
+
 // const overlay = document.getElementById("easterEggOverlay");
 // const eggImg = document.getElementById("eggImage");
 
