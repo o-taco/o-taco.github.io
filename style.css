@@ -625,19 +625,20 @@ a:hover {
 /* ---------- easter egg overlay ---------- */
 
 .easter-egg-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 99999;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background: rgba(10, 12, 20, 0.55);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  z-index: 2147483647;
 
-  transform: translateZ(0);
+  background: rgba(10, 12, 20, 0.6);
+  backdrop-filter: blur(10px);
 }
 
 .easter-egg-overlay.hidden {
