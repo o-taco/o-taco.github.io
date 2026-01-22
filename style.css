@@ -597,6 +597,79 @@ a:hover {
 
 .trophy[data-leve]()
 
+/* ---------- easter egg overlay ---------- */
+
+.easter-egg-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(10, 12, 20, 0.45);
+  backdrop-filter: blur(6px);
+}
+
+.easter-egg-overlay.hidden {
+  display: none;
+}
+
+.easter-egg-glass {
+  position: relative;
+  padding: 16px;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 25px 60px rgba(0, 0, 0, 0.6);
+
+  animation: popIn 0.25s ease-out;
+}
+
+.easter-egg-glass img {
+  max-width: min(90vw, 600px);
+  max-height: 80vh;
+  border-radius: 10px;
+}
+
+#easterEggClose {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+
+  font-family: inherit;
+  font-size: 18px;
+
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+
+  cursor: pointer;
+}
+
+#easterEggClose:hover {
+  color: white;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.96);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 
 
 /* responsive */
