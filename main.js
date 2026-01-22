@@ -113,7 +113,6 @@ const b64img =
 // });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const csFocus = document.getElementById("csFocus");
   const overlay = document.getElementById("easterEggOverlay");
   const overlayImg = document.getElementById("easterEggImage");
   const overlayClose = document.getElementById("easterEggClose");
@@ -133,13 +132,16 @@ document.addEventListener("DOMContentLoaded", () => {
   csFocus.addEventListener(
     "click",
     (e) => {
-      console.log("CS clicked", e.shiftKey);
-
-      if (!e.shiftKey) return;
-
       e.preventDefault();
+  
+      console.log("CS clicked", e.shiftKey);
+  
+      if (!e.shiftKey) {
+        return;
+      }
+  
       e.stopImmediatePropagation();
-
+  
       overlayImg.src = b64img;
       overlay.classList.remove("hidden");
     },
