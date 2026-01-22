@@ -451,15 +451,35 @@ a:hover {
   margin-top: 120px;
 }
 
+.awards-container {
+  margin-top: 32px;
+  padding: 36px 32px 42px;
+
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 22px;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.55);
+}
+
 /* ---- shelf wrapper ---- */
 
 .award-shelf {
-  margin-top: 56px;
+  position: relative;
+  padding: 26px 28px 44px;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
 }
+
 
 /* shelf label */
 .shelf-title {
-  margin-bottom: 12px;
+  margin-bottom: 18px;
   font-size: 12px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -502,19 +522,18 @@ a:hover {
 .award-shelf::after {
   content: "";
   position: absolute;
-  left: 20px;
-  right: 20px;
-  bottom: 10px;
+  left: 24px;
+  right: 24px;
+  bottom: 16px;
   height: 2px;
+
   background: linear-gradient(
     to right,
     transparent,
     rgba(255,255,255,0.25),
     transparent
   );
-  pointer-events: none;
 }
-
 /* ---- trophy ---- */
 
 .trophy {
@@ -540,6 +559,22 @@ a:hover {
     grayscale(0)
     brightness(1.25)
     drop-shadow(0 0 18px rgba(160,190,255,0.8));
+}
+
+.trophy-info {
+  margin: 48px auto 0;
+  max-width: 560px;
+  text-align: center;
+
+  padding: 22px 28px;
+  border-radius: 18px;
+
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+
+  color: rgba(230,240,255,0.9);
 }
 
 /* ---- level badge ---- */
