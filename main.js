@@ -113,7 +113,8 @@ csFocus.addEventListener("click", (e) => {
 //   if (e.key === "Escape") {
 //     overlay.classList.add("hidden");
 //   }
-// });
+// }); 
+//
 
 // ---------- parallax bg ----------
 const bg = document.getElementById("bgImage");
